@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://crm.b2c.sap.tchibo.com:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZC_BUSINESSPARTNER_CDS" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZC_BusinessPartnerType" sap:label="Business Partner" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BusinessPartner"/>
+                </Key>
+                <Property Name="BusinessPartner" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="BusinessPartnerName" sap:label="Geschäftspartner"/>
+                <Property Name="CreationTime" Type="Edm.Time" Precision="0" sap:label="Angelegt um"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Geändert von"/>
+                <Property Name="LastChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Geändert am"/>
+                <Property Name="LastChangeTime" Type="Edm.Time" Precision="0" sap:label="Geändert um"/>
+                <Property Name="BusinessPartnerIsBlocked" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Zentrale Sperre"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="VerwendZweck erfüllt"/>
+                <Property Name="FirstName" Type="Edm.String" MaxLength="40" sap:label="Vorname"/>
+                <Property Name="LastName" Type="Edm.String" MaxLength="40" sap:label="Nachname"/>
+                <Property Name="PersonFullName" Type="Edm.String" MaxLength="80" sap:label="Vollständiger Name"/>
+                <Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="40" sap:label="Name 1"/>
+                <Property Name="BusinessPartnerCategory" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Geschäftspartnertyp"/>
+                <Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="40" sap:label="Name 2"/>
+                <Property Name="OrganizationBPName3" Type="Edm.String" MaxLength="40" sap:label="Name 3"/>
+                <Property Name="OrganizationBPName4" Type="Edm.String" MaxLength="40" sap:label="Name 4"/>
+                <Property Name="InternationalLocationNumber1" Type="Edm.String" MaxLength="7" sap:display-format="NonNegative" sap:label="Int. Lokationsnr. 1"/>
+                <Property Name="InternationalLocationNumber2" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Int. Lokationsnr. 2"/>
+                <Property Name="InternationalLocationNumber3" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Prüfziffer"/>
+                <Property Name="LegalForm" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Rechtsform"/>
+                <Property Name="OrganizationFoundationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Gründungsdatum"/>
+                <Property Name="OrganizationLiquidationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Liquidationsdatum"/>
+                <Property Name="Industry" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Branche"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Berechtigungsgruppe"/>
+                <Property Name="IsNaturalPerson" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Natürliche Person"/>
+                <Property Name="IsFemale" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Weiblich"/>
+                <Property Name="IsMale" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Männlich"/>
+                <Property Name="IsSexUnknown" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Unbekannt"/>
+                <Property Name="FormOfAddress" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Anrede"/>
+                <Property Name="AcademicTitle" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Akademischer Titel 1"/>
+                <Property Name="AcademicTitle2" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="2.Akademischer Titel"/>
+                <Property Name="NameFormat" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Format Namensaufb."/>
+                <Property Name="NameCountry" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Land f. Aufbereitung"/>
+                <Property Name="BusinessPartnerGrouping" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Gruppierung"/>
+                <Property Name="BusinessPartnerUUID" Type="Edm.Guid" sap:label="GP-GUID"/>
+                <Property Name="BusinessPartnerType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Geschäftspartnerart"/>
+                <Property Name="MiddleName" Type="Edm.String" MaxLength="40" sap:label="2. Vorname"/>
+                <Property Name="AdditionalLastName" Type="Edm.String" MaxLength="40" sap:label="2. Nachname"/>
+                <Property Name="GroupBusinessPartnerName1" Type="Edm.String" MaxLength="40" sap:label="Name 1"/>
+                <Property Name="GroupBusinessPartnerName2" Type="Edm.String" MaxLength="40" sap:label="Name 2"/>
+                <Property Name="CorrespondenceLanguage" Type="Edm.String" MaxLength="2" sap:label="Korrespondenzsprache"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Sprache"/>
+                <Property Name="SearchTerm1" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Suchbegriff 1"/>
+                <Property Name="SearchTerm2" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Suchbegriff 2"/>
+                <Property Name="BPLastNameSearchHelp" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Name1/Nachname"/>
+                <Property Name="PersonNumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Personennummer"/>
+                <Property Name="BPFirstNameSearchHelp" Type="Edm.String" MaxLength="35" sap:display-format="UpperCase" sap:label="Name2/Vorname"/>
+                <Property Name="BusinessPartnerNicknameLabel" Type="Edm.String" MaxLength="40" sap:label="Rufname"/>
+                <Property Name="IndependentAddressID" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Adreßnummer"/>
+                <Property Name="BirthDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Geburtsdatum"/>
+                <Property Name="IsMarkedForArchiving" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Archiviervormerkung"/>
+                <Property Name="ContactPermission" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Kontakt"/>
+                <Property Name="BusinessPartnerIDByExtSystem" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Ext. Partnernummer"/>
+                <Property Name="LegalEntityOfOrganization" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Rechtsträger"/>
+                <Property Name="BusinessPartnerPrintFormat" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Druckformat"/>
+                <Property Name="BusinessPartnerDataOriginType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Datenherkunft"/>
+                <Property Name="BusinessPartnerName" Type="Edm.String" MaxLength="81" sap:display-format="UpperCase" sap:label="Business Partner Name" sap:quickinfo="BUSINESS PARTNER NAME"/>
+                <Property Name="BusinessPartnerIsNotReleased" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Nicht freigegeben"/>
+                <Property Name="IsNotContractuallyCapable" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Nicht geschäftsfähig"/>
+                <Property Name="BusinessPartnerOccupation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Beruf"/>
+                <Property Name="BusPartMaritalStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Familienstand"/>
+                <Property Name="BusPartNationality" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Nationalität"/>
+                <Property Name="BusinessPartnerFullName" Type="Edm.String" MaxLength="81" sap:display-format="UpperCase"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Angelegt von"/>
+                <Property Name="CreationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Angelegt am"/>
+            </EntityType>
+            <EntityContainer Name="ZC_BUSINESSPARTNER_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZC_BusinessPartner" EntityType="ZC_BUSINESSPARTNER_CDS.ZC_BusinessPartnerType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="https://crm.b2c.sap.tchibo.com:443/sap/opu/odata/sap/ZC_BUSINESSPARTNER_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://crm.b2c.sap.tchibo.com:443/sap/opu/odata/sap/ZC_BUSINESSPARTNER_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

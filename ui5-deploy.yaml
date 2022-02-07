@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.5"
+metadata:
+  name: tchibo.b2c.cspuiintegration
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: sap-crm-b2c-sk
+          url: http://crm.b2c.sap.tchibo.com:443
+        app:
+          name: ZCSPUIINTEGRT
+          description: CSP PoC for UI Integration
+          package: $TMP
+          transport: ""

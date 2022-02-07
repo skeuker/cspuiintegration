@@ -1,0 +1,31 @@
+specVersion: "2.5"
+metadata:
+  name: tchibo.b2c.cspuiintegration
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+          version: ""
+        backend:
+          - path: /sap
+            url: http://crm.b2c.sap.tchibo.com:443
+            client: "010"
+            destination: sap-crm-b2c-sk
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: tchibo.b2c.cspuiintegration

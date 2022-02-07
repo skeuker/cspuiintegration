@@ -1,0 +1,9 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "deploy-config",
+            "label": "npm: deploy-config"
+        }
+    ]
+}

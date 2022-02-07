@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tchibo.b2c.cspuiintegration.controller.UIIntegration" displayBlock="true">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}" showHeader="false">
+                    <content>
+                    <VBox id="_IDGenVBox1">
+                    <sap.ui.comp.smarttable:SmartTable xmlns:sap.ui.comp.smarttable="sap.ui.comp.smarttable" width="100%" direction="Column" fitContainer="true" tableType="ResponsiveTable" header="UI Integration" enableAutoBinding="true" entitySet="ZC_BusinessPartner" id="table0" initialise="onSmartTableInitialise" beforeRebindTable="onBeforeRebindTable" height="60px" showRowCount="false" placeToolbarInTable="true"/>
+                    </VBox>
+                    </content>
+                    <footer>
+                      <Toolbar id="_IDGenToolbar1">
+                        <Button id="_IDGenButton1" text="Fertig" press="onCompleteButtonPress"/>
+                      </Toolbar>
+                    </footer>
+                </Page>
+            </pages>
+        </App>
+</mvc:View>
